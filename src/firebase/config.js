@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyAA_4uURLSz7Dc4NTrNd3PawLbxKgCGJjw",
   authDomain: "message-chat-vue-app.firebaseapp.com",
@@ -11,5 +12,6 @@ const firebaseConfig = {
 };
 
 let app = firebase.initializeApp(firebaseConfig);
+let auth = firebase.auth();
 let db = firebase.firestore(app);
-export { db };
+export { db, auth };

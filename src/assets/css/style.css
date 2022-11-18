@@ -62,6 +62,8 @@ label {
   width: 100%;
   padding: 10px;
   border: 0;
+  font-size: 15px;
+  color: var(--secondary);
   border-bottom: 1px solid #dfdfdf;
 }
 .btn {

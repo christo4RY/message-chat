@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-primary text-center mt-3">Sign Up</h1>
-  <form @submit.prevent="">
+  <form @submit.prevent="createNewUser">
     <div class="form-group">
       <label for="name">Name: </label>
       <input type="text" class="form-control" v-model="name" />
@@ -28,7 +28,9 @@
 
 <script>
 import { ref } from "@vue/reactivity";
-import { db } from "@/firebase/config";
+import createUser from "@/composables/createUser.js";
+import { createToast } from "mosha-vue-toastify";
+import "mosha-vue-toastify/dist/style.css";
 export default {
   setup() {
     let name = ref("");
@@ -36,7 +38,25 @@ export default {
     let password = ref("");
     let confirm_password = ref("");
 
-    return { name, email, password, confirm_password };
+    let { error, user } = createUser();
+
+    let createNewUser = async () => {
+      let getUser = await user(email.value, password.value, name.value);
+      name.value = "";
+      email.value = "";
+      password.value = "";
+      confirm_password.value = "";
+      if (getUser.user) {
+        createToast("Create account ", {
+          showIcon: "true",
+          position: "top-right",
+          type: "success",
+          transition: "slide",
+        });
+      }
+    };
+
+    return { name, email, password, confirm_password, createNewUser, error };
   },
 };
 </script>

@@ -29,10 +29,11 @@
 <script>
 import { ref } from "@vue/reactivity";
 import createUser from "@/composables/createUser.js";
-import { createToast } from "mosha-vue-toastify";
-import "mosha-vue-toastify/dist/style.css";
+import { useRouter } from "vue-router";
+import Swal from "sweetalert2";
 export default {
   setup() {
+    let router = useRouter();
     let name = ref("");
     let email = ref("");
     let password = ref("");
@@ -47,12 +48,24 @@ export default {
       password.value = "";
       confirm_password.value = "";
       if (getUser.user) {
-        createToast("Create account ", {
-          showIcon: "true",
-          position: "top-right",
-          type: "success",
-          transition: "slide",
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
         });
+
+        Toast.fire({
+          icon: "success",
+          title: "Signed up successfully",
+        });
+
+        router.push({ name: "message.room" });
       }
     };
 

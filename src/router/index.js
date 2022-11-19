@@ -7,6 +7,11 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+  {
+    path: "/message-room",
+    name: "message.room",
+    component: () => import("@/views/MessageRoom.vue"),
+  },
 ];
 
 const router = createRouter({

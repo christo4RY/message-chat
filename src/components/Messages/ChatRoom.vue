@@ -1,8 +1,8 @@
 <template>
   <div class="chat-room" ref="msgbox">
     <div v-for="message in messages" :key="message.id">
-      <div v-if="message.userId == user.uid">
-        <div class="messages" style="float: right">
+      <div v-if="message.userId == user.uid" class="messageLayout">
+        <div class="messages">
           <!-- <p class="mb-2">{{ message.created_at }}</p> -->
           <p>
             <span class="message text-secondary">{{ message.message }}</span>

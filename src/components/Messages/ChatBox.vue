@@ -30,8 +30,10 @@ export default {
         message: message.value,
         created_at: timestamp(),
       };
-      await messageSend(messages);
-      message.value = "";
+      if (message.value) {
+        await messageSend(messages);
+        message.value = "";
+      }
     };
 
     return { message, sendMessages };

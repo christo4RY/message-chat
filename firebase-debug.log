@@ -1,0 +1,29 @@
+[debug] [2022-11-20T14:17:05.531Z] ----------------------------------------------------------------------
+[debug] [2022-11-20T14:17:05.543Z] Command:       /usr/local/bin/firebase /home/christopher/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init
+[debug] [2022-11-20T14:17:05.544Z] CLI Version:   11.16.1
+[debug] [2022-11-20T14:17:05.547Z] Platform:      linux
+[debug] [2022-11-20T14:17:05.547Z] Node Version:  v16.16.0
+[debug] [2022-11-20T14:17:05.552Z] Time:          Sun Nov 20 2022 20:47:05 GMT+0630 (Myanmar Time)
+[debug] [2022-11-20T14:17:05.553Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-20T14:17:05.564Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-11-20T14:17:05.740Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-20T14:17:05.741Z] > authorizing via signed-in user (arkarlin486@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/christopher/Desktop/message-chat-app
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 

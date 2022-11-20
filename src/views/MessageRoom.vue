@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="phone">
     <div class="message-room-container">
       <Navbar></Navbar>
       <ChatRoom></ChatRoom>
